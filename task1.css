@@ -147,3 +147,41 @@ footer {
 .submenu li {
     margin: 5px 0;
 }
+
+#modal-btn {
+    color:rgb(34, 23, 33);
+    padding: 20px;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.modal-overlay:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    margin: 10% auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    text-decoration: none;
+    color: #888;
+    font-size: 1.2rem;
+}
