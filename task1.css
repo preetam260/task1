@@ -295,3 +295,25 @@ input[type="radio"] {
 .carousel:hover .slides {
     animation-play-state: paused;
 }   
+
+input {
+    display: none;
+}
+
+label {
+    display: block;
+    padding: 10px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+input:checked + label + .content {
+    max-height: 100px;
+    padding: 10px;
+}
