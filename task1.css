@@ -185,31 +185,3 @@ footer {
     color: #888;
     font-size: 1.2rem;
 }
-
-input[type="radio"] {
-    display: none;
-}
-
-.tab-label {
-    display: flex;
-    gap: 10px;
-}
-
-label {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.content div {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-#tab1:checked ~ .content #content1 {
-    display: block;
-}
-
-#tab2:checked ~ .content #content2 {
-    display: block;
-}
