@@ -213,3 +213,85 @@ label {
 #tab2:checked ~ .content #content2 {
     display: block;
 }
+
+.carousel {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ccc;
+}
+
+@keyframes autoSlide {
+    0%   { transform: translateX(0%); }
+    33%  { transform: translateX(-100%); }
+    66%  { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+.slides {
+    display: flex;
+    width: 900px;
+    height: 510px;
+    animation: autoSlide 9s infinite;
+}
+
+.slide {
+    width: 900px;
+    height: 510px;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 900px;
+    height: 510px;
+    display: block;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+.nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nav label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#slide1:checked ~ .nav label[for="slide1"],
+#slide2:checked ~ .nav label[for="slide2"],
+#slide3:checked ~ .nav label[for="slide3"] {
+    background: black;
+}
+
+.nav label:hover {
+    background: #666;
+}
+
+.carousel:hover .slides {
+    animation-play-state: paused;
+}   
