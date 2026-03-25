@@ -13,6 +13,9 @@ header {
     }
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #f0ede6;
     padding: 10px;
     text-align: center;
@@ -200,17 +203,17 @@ label {
     cursor: pointer;
 }
 
-.content div {
+.tab-content div {
     display: none;
     padding: 10px;
     border: 1px solid #ccc;
 }
 
-#tab1:checked ~ .content #content1 {
+#tab1:checked ~ .tab-content #content1 {
     display: block;
 }
 
-#tab2:checked ~ .content #content2 {
+#tab2:checked ~ .tab-content #content2 {
     display: block;
 }
 
@@ -316,4 +319,63 @@ label {
 input:checked + label + .content {
     max-height: 100px;
     padding: 10px;
+}
+
+.task-9-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 20px; 
+    background: #e0e0da;
+    padding: 20px;
+    height: fit-content;
+    border: 1px solid #ccc;
+}
+
+.flex-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.box {
+    padding: 30px;
+    border: 1px solid #333;
+}
+
+.base-box {
+    background: white;
+    width: 150px;
+}
+
+.overlap-box {
+    background: #1a1a1a;
+    color: white;
+    width: 180px;
+    position: relative;
+    left: -40px;   
+    top: 20px;     
+    z-index: 5;    
+}
+
+.simulated-page {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    animation: fadeIn 0.5s ease;
+}
+
+.simulated-page:target {
+    display: block; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
